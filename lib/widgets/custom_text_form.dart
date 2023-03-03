@@ -1,5 +1,4 @@
-
-import 'package:flutter/material.dart';
+import '../app.dart';
 
 class MainTextForm extends StatelessWidget {
   const MainTextForm(
@@ -10,7 +9,10 @@ class MainTextForm extends StatelessWidget {
       this.obscureText = false,
       this.keyboardType = TextInputType.text,
       this.ontap,
-      this.focus});
+      this.focus,
+      this.validator,
+      this.onChanged,
+      this.controller});
   final String text;
   final IconData icon;
   final IconData? suffixIcon;
@@ -18,12 +20,17 @@ class MainTextForm extends StatelessWidget {
   final bool? obscureText;
   final void Function()? ontap;
   final TextInputType keyboardType;
-
+  final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      validator: validator,
+      onChanged: onChanged,
       keyboardType: keyboardType,
-      obscureText: obscureText!, 
+      obscureText: obscureText!,
       decoration: InputDecoration(
         prefixIcon: Icon(icon),
         suffixIcon: InkWell(onTap: ontap, child: Icon(suffixIcon)),

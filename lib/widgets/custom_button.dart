@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/register_screen.dart';
 
@@ -8,13 +6,15 @@ class mainButton extends StatelessWidget {
     super.key,
     required this.text,
     this.outlinleButton = false,
+    required this.onPressed,
   });
   final String text;
   final bool outlinleButton;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 0,
         backgroundColor: outlinleButton ? Colors.transparent : primaryColor,

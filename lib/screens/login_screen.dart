@@ -1,9 +1,7 @@
 import '../app.dart';
 
-const Color primaryColor = Colors.deepPurple;
-
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +27,7 @@ class RegisterScreen extends StatelessWidget {
                   height: 250,
                   alignment: Alignment.center,
                   child: const Text(
-                    "Register",
+                    "Login",
                     style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
@@ -39,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
               ),
             ],
           ),
-          const Body(),
+          const BodyLogin(),
         ],
       ),
     );
